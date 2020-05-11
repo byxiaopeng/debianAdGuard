@@ -7,6 +7,10 @@ RUN apt install dhcpcd5 -y
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 ADD configure.sh /configure.sh
+
+ADD AdGuardHome /ad/AdGuardHome
+RUN chmod +x /ad/AdGuardHome
+
 RUN chmod +x /configure.sh
 ENTRYPOINT /configure.sh
 EXPOSE 53 80 3000
