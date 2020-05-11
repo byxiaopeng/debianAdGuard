@@ -11,8 +11,8 @@ RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 RUN echo root:123456789 |chpasswd root
 
 
-ADD AdGuardHome /ad/AdGuardHome
-RUN chmod +x /ad/AdGuardHome
+ADD AdGuardHome Ad/AdGuardHome
+RUN chmod +x Ad/AdGuardHome
 
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
