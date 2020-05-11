@@ -1,0 +1,16 @@
+name: Publish Docker
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Publish to Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: byxiaopeng/debianAdGuard
+          username: byxiaopeng
+          password: Qq9945678
+          tag_names: true
+      - name: WeChat notification
+        run: curl https://sc.ftqq.com/SCU3787Te82950be8737ede8ba744210bdefaea35826a78d5c33a.send?text=推送debianAdGuard
