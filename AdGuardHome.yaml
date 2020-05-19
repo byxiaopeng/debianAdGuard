@@ -31,8 +31,8 @@ dns:
   - 218.104.111.122
   bootstrap_dns:
   - 114.114.114.114
-  all_servers: true
-  fastest_addr: false
+  all_servers: false
+  fastest_addr: true
   allowed_clients: []
   disallowed_clients: []
   blocked_hosts: []
