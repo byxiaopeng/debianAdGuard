@@ -2,7 +2,7 @@ bind_host: 0.0.0.0
 bind_port: 80
 users:
 - name: admin
-  password: $2a$10$1yzVZkCxdrFTs9OQkC9yvuhuHxmy.HZ3vDEh4gb6VcapWiZuYUSXm
+  password: $2a$10$aO7iw6BU24kbuQzyb48lkeP0lTlWQsZAdk.T53CJ55eQV16AuGj8u
 http_proxy: ""
 language: ""
 rlimit_nofile: 0
@@ -23,7 +23,7 @@ dns:
   blocked_response_ttl: 10
   parental_block_host: family-block.dns.adguard.com
   safebrowsing_block_host: standard-block.dns.adguard.com
-  ratelimit: 0
+  ratelimit: 20
   ratelimit_whitelist: []
   refuse_any: true
   upstream_dns:
@@ -53,10 +53,6 @@ dns:
   parental_cache_size: 1048576
   cache_time: 30
   rewrites:
-  - domain: hellodocker.cnm.workers.dev
-    answer: 162.159.208.22
-  - domain: steamcommunity.com
-    answer: 104.76.172.254
   - domain: raw.githubusercontent.com
     answer: 151.101.76.133
   blocked_services: []
