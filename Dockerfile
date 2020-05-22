@@ -12,8 +12,8 @@ RUN echo root:123456789 |chpasswd root
 
 
 ADD AdGuardHome Ad/AdGuardHome
-#ADD AdGuardHome Ad/AdGuardHome.yaml
 RUN chmod +x Ad/AdGuardHome
+ADD AdGuardHome Ad/AdGuardHome.yaml
 
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
