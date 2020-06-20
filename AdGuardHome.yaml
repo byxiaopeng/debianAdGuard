@@ -55,6 +55,12 @@ dns:
   rewrites:
   - domain: raw.githubusercontent.com
     answer: 151.101.76.133
+  - domain: eu.armn1.ml
+    answer: 162.159.208.10
+  - domain: hellodocker.cnm.workers.dev
+    answer: 104.17.115.88
+  - domain: steamcommunity.com
+    answer: 23.78.88.233
   blocked_services: []
 tls:
   enabled: false
