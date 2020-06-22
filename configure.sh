@@ -1,4 +1,4 @@
 #!/bin/bash
-/usr/sbin/sshd -d
+/etc/init.d/sshd status
 # 开启转发
 /AdGuardHome/AdGuardHome
