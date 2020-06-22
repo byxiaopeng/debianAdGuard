@@ -55,10 +55,6 @@ dns:
   rewrites:
   - domain: raw.githubusercontent.com
     answer: 151.101.76.133
-  - domain: eu.armn1.ml
-    answer: 162.159.208.10
-  - domain: hellodocker.cnm.workers.dev
-    answer: 104.17.115.88
   - domain: steamcommunity.com
     answer: 23.78.88.233
   blocked_services: []
@@ -74,7 +70,11 @@ tls:
   private_key: ""
   certificate_path: ""
   private_key_path: ""
-filters: []
+filters:
+- enabled: true
+  url: http://dmxz2.us-south.cf.appdomain.cloud/peng.txt
+  name: bypengADS
+  id: 1592668855
 whitelist_filters: []
 user_rules: []
 dhcp:
