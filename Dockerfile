@@ -5,25 +5,14 @@ RUN apk upgrade
 
 RUN apk add wget
 RUN apk add curl
-RUN apk add unzip
 RUN apk add bash
 RUN apk add dhcp
-RUN apk add openrc
-RUN apk add openssh-server
-
 #同步系统时间
 RUN apk add tzdata
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo "Asia/Shanghai" > /etc/timezone
 RUN apk del tzdata
 
-
-RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
-RUN ssh-keygen -t dsa -P "" -f /etc/ssh/ssh_host_dsa_key
-RUN ssh-keygen -t rsa -P "" -f /etc/ssh/ssh_host_rsa_key
-RUN ssh-keygen -t ecdsa -P "" -f /etc/ssh/ssh_host_ecdsa_key
-RUN ssh-keygen -t ed25519 -P "" -f /etc/ssh/ssh_host_ed25519_key
-RUN echo "root:123456789" | chpasswd
 #更新源
 #RUN apt-get -y update && apt-get -y upgrade
 #RUN apt install wget -y
