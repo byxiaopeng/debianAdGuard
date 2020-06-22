@@ -9,7 +9,7 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 RUN echo root:123456789 |chpasswd root
-RUN ewget https://github.com/AdguardTeam/AdGuardHome/releases/latest/download/AdGuardHome_linux_arm64.tar.gz
+RUN wget https://github.com/AdguardTeam/AdGuardHome/releases/latest/download/AdGuardHome_linux_arm64.tar.gz
 RUN tar  -zxvf AdGuardHome_linux_arm64.tar.gz
 RUN chmod +x /AdGuardHome/AdGuardHome
 ADD AdGuardHome.yaml /AdGuardHome/AdGuardHome.yaml
