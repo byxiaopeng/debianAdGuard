@@ -8,7 +8,6 @@ RUN apk add curl
 RUN apk add unzip
 RUN apk add bash
 RUN apk add dhcp
-RUN apk add openrc
 RUN apk add openssh-server
 
 #同步系统时间
