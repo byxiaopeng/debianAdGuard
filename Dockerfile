@@ -1,11 +1,14 @@
 #FROM arm64v8/debian
 FROM arm64v8/alpine
 RUN apk update
+RUN apk upgrade
 
 RUN apk add wget
 RUN apk add curl
 RUN apk add unzip
 RUN apk add bash
+RUN apk add dhcp
+
 #同步系统时间
 RUN apk add tzdata
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
