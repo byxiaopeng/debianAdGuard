@@ -6,7 +6,7 @@ RUN apk upgrade
 RUN apk add wget
 RUN apk add curl
 RUN apk add bash
-RUN apk add dhcp
+RUN apk add dhcpcd
 #同步系统时间
 RUN apk add tzdata
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
