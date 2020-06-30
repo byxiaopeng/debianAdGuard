@@ -55,7 +55,7 @@ dns:
   rewrites:
   - domain: raw.githubusercontent.com
     answer: 151.101.76.133
-  - domain: *.cnm.workers.dev
+  - domain: cnm.workers.dev
     answer: 104.25.133.40
   blocked_services: []
 tls:
