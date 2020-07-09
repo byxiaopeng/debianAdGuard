@@ -70,7 +70,7 @@ tls:
   private_key_path: ""
 filters:
 - enabled: true
-  url: http://dmxz2.us-south.cf.appdomain.cloud/peng.txt
+  url: http://aria.free.idcfengye.com/peng.txt
   name: bypengADS
   id: 1592668855
 whitelist_filters: []
