@@ -27,9 +27,9 @@ dns:
   ratelimit_whitelist: []
   refuse_any: true
   upstream_dns:
-  - 192.168.50.1
+  - 218.104.111.114
   bootstrap_dns:
-  - 192.168.50.1
+  - 218.104.111.114
   all_servers: true
   fastest_addr: false
   allowed_clients: []
