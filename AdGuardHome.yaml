@@ -69,7 +69,7 @@ tls:
   private_key_path: ""
 filters:
 - enabled: true
-  url: http://aria.free.idcfengye.com/peng.txt
+  url: https://cdn.jsdelivr.net/gh/byxiaopeng/ads/peng.txt
   name: bypengADS
   id: 1592668855
 whitelist_filters: []
