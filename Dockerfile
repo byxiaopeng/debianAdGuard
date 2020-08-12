@@ -24,9 +24,9 @@ RUN apk del tzdata
 RUN wget https://static.adguard.com/adguardhome/beta/AdGuardHome_linux_arm64.tar.gz
 RUN tar  -zxvf AdGuardHome_linux_arm64.tar.gz
 RUN rm -r AdGuardHome_linux_arm64.tar.gz
-RUN chmod +x /AdGuardHome/AdGuardHome
-ADD AdGuardHome.yaml /AdGuardHome/AdGuardHome.yaml
-
+RUN mv /AdGuardHome/AdGuardHome /usr/bin/AdGuardHome
+RUN chmod +x /usr/bin/AdGuardHome
+VOLUME /AdGuardHome
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
 ENTRYPOINT /configure.sh
