@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # 开启转发
-/AdGuardHome/AdGuardHome
+AdGuardHome -c /AdGuardHome/AdGuardHome.yaml
