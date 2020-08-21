@@ -2,7 +2,6 @@
 FROM arm64v8/alpine
 RUN apk update
 RUN apk upgrade
-
 RUN apk add wget curl bash dhcpcd
 
 #同步系统时间
@@ -21,12 +20,14 @@ RUN apk del tzdata
 #RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 #RUN echo root:123456789 |chpasswd root
 #RUN wget https://github.com/AdguardTeam/AdGuardHome/releases/latest/download/AdGuardHome_linux_arm64.tar.gz
-RUN wget https://static.adguard.com/adguardhome/beta/AdGuardHome_linux_arm64.tar.gz
+RUN wget https://static.adguard.com/adguardhome/edge/AdGuardHome_linux_arm64.tar.gz
 RUN tar  -zxvf AdGuardHome_linux_arm64.tar.gz
 RUN rm -r AdGuardHome_linux_arm64.tar.gz
 RUN mv /AdGuardHome/AdGuardHome /usr/bin/AdGuardHome
 RUN chmod +x /usr/bin/AdGuardHome
+
 VOLUME /AdGuardHome
+
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
 ENTRYPOINT /configure.sh
