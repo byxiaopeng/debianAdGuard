@@ -15,8 +15,8 @@ jobs:
             uses: ilteoood/docker_buildx@master
             with:
               publish: true
-              imageName: byxiaopeng/debian-ad
+              imageName: ${{ secrets.DOCKER_user }}/debian-ad
               platform: linux/arm64
               tag: latest # 默认latest，可以针对平台，修改tag
-              dockerHubUser: byxiaopeng
+              dockerHubUser: ${{ secrets.DOCKER_USER }}
               dockerHubPassword: ${{ secrets.DOCKER_PASSWORD }}
