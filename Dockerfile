@@ -2,7 +2,7 @@
 FROM arm64v8/alpine
 RUN apk update
 RUN apk upgrade
-RUN apk add wget curl bash dhcpcd
+RUN apk add wget vim curl bash dhcpcd
 
 #同步系统时间
 RUN apk add tzdata
