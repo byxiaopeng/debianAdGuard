@@ -25,7 +25,7 @@ RUN chmod +x /usr/bin/AdGuardHome
 
 VOLUME /AdGuardHome
 
-ADD configure.sh /configure.sh
-RUN chmod +x /configure.sh
-ENTRYPOINT /configure.sh
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT /entrypoint.sh
 EXPOSE 22 53 80 3000
