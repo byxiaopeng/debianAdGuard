@@ -9,7 +9,6 @@ RUN sed -i "s/#PermitRootLogin.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
 RUN echo root:123456789 |chpasswd root
 
 RUN wget https://github.com/AdguardTeam/AdGuardHome/releases/latest/download/AdGuardHome_linux_arm64.tar.gz
-#RUN wget https://static.adguard.com/adguardhome/edge/AdGuardHome_linux_arm64.tar.gz
 RUN tar  -zxvf AdGuardHome_linux_arm64.tar.gz
 RUN rm -r AdGuardHome_linux_arm64.tar.gz
 RUN mv /AdGuardHome/AdGuardHome /usr/bin/AdGuardHome
