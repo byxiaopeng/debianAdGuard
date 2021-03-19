@@ -6,17 +6,21 @@ on:
     types: started
 jobs:
   build:
-      runs-on: ubuntu-20.04
-      name: Build image job
-      steps:
-          - name: Checkout master
-            uses: actions/checkout@master
-          - name: Build and publish image
-            uses: ilteoood/docker_buildx@master
-            with:
-              publish: true
-              imageName: ${{ secrets.DOCKER_user }}/adguardhome
-              platform: linux/arm64
-              tag: latest # 默认latest，可以针对平台，修改tag
-              dockerHubUser: ${{ secrets.DOCKER_USER }}
-              dockerHubPassword: ${{ secrets.DOCKER_PASSWORD }}
+    runs-on: Ubuntu-20.04  
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install build dependencies
+      run: |
+        df -h
+    - name: login docker
+      run: |
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+        #启用 buildx 插件
+        export DOCKER_CLI_EXPERIMENTAL=enabled
+        docker run --privileged --rm docker/binfmt:a7996909642ee92942dcd6cff44b9b95f08dad64
+        docker buildx create --use --name mybuilder
+        docker buildx inspect mybuilder --bootstrap
+        docker buildx ls
+    - name: docker elecv2pjd
+      run: |
+        docker buildx build -t ${{ secrets.DOCKER_USERNAME }}/adguardhome --platform=linux/arm64 . --push
