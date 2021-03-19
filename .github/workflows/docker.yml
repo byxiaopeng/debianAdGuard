@@ -15,7 +15,7 @@ jobs:
             uses: ilteoood/docker_buildx@master
             with:
               publish: true
-              imageName: ${{ secrets.DOCKER_user }}/debian-ad
+              imageName: ${{ secrets.DOCKER_user }}/adguardhome
               platform: linux/arm64
               tag: latest # 默认latest，可以针对平台，修改tag
               dockerHubUser: ${{ secrets.DOCKER_USER }}
