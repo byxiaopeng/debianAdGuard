@@ -1,4 +1,4 @@
-FROM arm64v8/debian
+FROM debian
 #更新源
 RUN apt-get -y update && apt-get -y upgrade
 RUN apt -y install wget dhcpcd5 openssh-server
