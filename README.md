@@ -1,4 +1,4 @@
-# debianAdGuard
+# adguardhome
 
 开启混杂模式
 
