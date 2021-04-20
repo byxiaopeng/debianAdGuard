@@ -2,7 +2,7 @@ FROM alpine
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 #更新源
 RUN apk update && apk upgrade
-RUN apk add wget tzdata dhcpcd5
+RUN apk add wget tzdata dhcp
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo "Asia/Shanghai" > /etc/timezone
 
