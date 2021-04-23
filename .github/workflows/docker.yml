@@ -23,4 +23,4 @@ jobs:
         docker buildx ls
     - name: docker elecv2pjd
       run: |
-        docker buildx build -t ${{ secrets.DOCKER_USERNAME }}/adguardhome --platform=linux/arm64 . --push
+        docker buildx build -t ${{ secrets.DOCKER_USERNAME }}/adguardhome --platform=linux/arm64,linux/amd64 . --push
