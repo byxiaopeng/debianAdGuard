@@ -2,7 +2,7 @@ FROM alpine
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 #更新源
 RUN apk update && apk upgrade
-RUN apk add bash wget tzdata dhcp
+RUN apk add bash wget curl tzdata dhcp
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo "Asia/Shanghai" > /etc/timezone
 RUN if [ $(arch) == aarch64 ]; then      curl -L -H "Cache-Control: no-cache" -o /AdGuardHome.tar.gz https://github.com/AdguardTeam/AdGuardHome/releases/latest/download/AdGuardHome_linux_arm64.tar.gz; fi
