@@ -5,10 +5,11 @@ RUN apk update && apk upgrade
 RUN apk add bash wget tzdata dhcp
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo "Asia/Shanghai" > /etc/timezone
-
-RUN wget https://github.com/AdguardTeam/AdGuardHome/releases/latest/download/AdGuardHome_linux_arm64.tar.gz
-RUN tar  -zxvf AdGuardHome_linux_arm64.tar.gz
-RUN rm -r AdGuardHome_linux_arm64.tar.gz
+RUN if [ $(arch) == aarch64 ]; then     linux=AdGuardHome_linux_arm64;     wget https://github.com/AdguardTeam/AdGuardHome/releases/latest/download/$linux.tar.gz; fi
+RUN if [ $(arch) == x86_64 ]; then     linux=AdGuardHome_linux_amd64;     wget https://github.com/AdguardTeam/AdGuardHome/releases/latest/download/$linux.tar.gz; fi
+#RUN wget https://github.com/AdguardTeam/AdGuardHome/releases/latest/download/AdGuardHome_linux_arm64.tar.gz
+RUN tar  -zxvf $linux.tar.gz
+RUN rm -r $linux.tar.gz
 RUN mv /AdGuardHome/AdGuardHome /usr/bin/AdGuardHome
 RUN chmod +x /usr/bin/AdGuardHome
 
