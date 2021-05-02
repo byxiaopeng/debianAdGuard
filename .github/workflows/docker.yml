@@ -21,6 +21,6 @@ jobs:
         docker buildx create --use --name mybuilder
         docker buildx inspect mybuilder --bootstrap
         docker buildx ls
-    - name: docker elecv2pjd
+    - name: docker adguardhome
       run: |
         docker buildx build -t ${{ secrets.DOCKER_USERNAME }}/adguardhome --platform=linux/arm64,linux/amd64 . --push
