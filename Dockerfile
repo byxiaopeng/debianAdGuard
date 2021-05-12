@@ -16,4 +16,5 @@ VOLUME /AdGuardHome
 EXPOSE 53 80 3000
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["tini", "--", "/entrypoint.sh"]
+ENTRYPOINT /entrypoint.sh
+#ENTRYPOINT ["tini", "--", "/entrypoint.sh"]
